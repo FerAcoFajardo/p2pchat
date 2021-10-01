@@ -20,7 +20,7 @@ public class ServerThread extends Thread {
     private Set<ServerThreadThread> serverThreadThreads = new HashSet<>();
 
     public ServerThread(String port) throws IOException{
-        serverSocket = new ServerSocket(Integer.parseInt(port));
+        serverSocket = new ServerSocket(Integer.valueOf(port));
     
     }
     

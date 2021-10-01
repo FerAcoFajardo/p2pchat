@@ -37,19 +37,19 @@ public class Peer {
         String[] inputValues = input.split(" ");
         
         if(!input.equals("s"))
-            for (int i = 0; i < inputValues.length; i++){
-                String[] address = inputValues[i].split(":");
+            for (String inputValue : inputValues) {
+                String[] address = inputValue.split(":");
                 Socket socket = null;
                 try{
-                    socket = new Socket(address[0], Integer.parseInt(address[1]));
+                    socket = new Socket(address[0], Integer.valueOf(address[1]));
                     new PeerThread(socket).start();
                 }catch(Exception e){
                     if(socket != null)
                         socket.close();
                     else
-                        System.out.println("Invalid input. skipping to next step.");
+                        System.err.println(e.getMessage());
                 }
-            }
+        }
         communicate(bufferedReader, username, serverThread);
 
         
