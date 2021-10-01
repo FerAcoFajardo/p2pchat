@@ -38,7 +38,7 @@ public class ServerThreadThread extends Thread {
             }
 
         }catch(Exception e){
-            e.printStackTrace();
+            serverThread.getServerThreadThreads().remove(this);
         }
     }
     

@@ -55,9 +55,7 @@ public class ServerThread extends Thread {
     
     public void sendMessage(String message){
         try{
-            serverThreadThreads.forEach(t -> {
-                t.getPrintWriter().println(message);
-            });
+            serverThreadThreads.forEach(t -> t.getPrintWriter().println(message));
         }catch(Exception e){
             e.printStackTrace();
         }
