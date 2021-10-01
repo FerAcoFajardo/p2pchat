@@ -23,6 +23,7 @@ public class Peer {
         BufferedReader bufferReader = new BufferedReader(new InputStreamReader(System.in));
         System.out.println("Enter username and port # for this peer:");
         String[] setupValues = bufferReader.readLine().split(" ");
+        System.out.println(setupValues.toString());
         ServerThread serverThread = new ServerThread(setupValues[1]);
         serverThread.start();
         
